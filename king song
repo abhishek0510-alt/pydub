@@ -1,0 +1,12 @@
+from pydub import AudioSegment
+from pydub.downloader import download
+
+# Download the YouTube video as an audio file
+video_url = "https://youtu.be/VuG7ge_8I2Y"
+audio_file = download(video_url)
+
+# Load the audio file
+audio = AudioSegment.from_file(audio_file)
+
+# Save the audio file as MP3
+audio.export("song.mp3", format="mp3")
